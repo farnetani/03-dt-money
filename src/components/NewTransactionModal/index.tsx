@@ -6,7 +6,7 @@ import outcomeImg from '../../assets/outcome.svg'
 import { api } from '../../services/api'
 import { Container, TransactionTypeContainer, RadioBox } from './styles'
 
-// Modal.setAppElement('root') // recomendação da react-modal
+Modal.setAppElement('#root') // recomendação da react-modal
 
 interface NewTransactionModalProps {
   isOpen: boolean
