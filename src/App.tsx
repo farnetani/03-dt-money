@@ -22,6 +22,7 @@ export function App() {
   }
   return (
     // <TransactionsContext.Provider value={[]}>
+    // Aqui eu uso o componente que criamos no Contexto que inclusive vai substituir o Contexto.Provider com a propriedade children (que pega tudo que tá entre ele)
     <TransactionsProvider>
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />

@@ -17,6 +17,7 @@ interface TransactionsProviderProps {
 
 export const TransactionsContext = createContext<Transaction[]>([])
 
+// Componente do tipo TransactionsContext.Provider (vai substituir ele na verdade)
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
   useEffect(() => {
