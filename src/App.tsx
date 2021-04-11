@@ -6,7 +6,7 @@ import { GlobalStyle } from './styles/global'
 import {
   // TransactionsContext,
   TransactionsProvider
-} from './TransactionsContext'
+} from './hooks/useTransactions'
 
 export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(
