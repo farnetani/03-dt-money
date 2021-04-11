@@ -4,7 +4,7 @@ import { Container } from './styles'
 
 export function TransactionsTable() {
   // Importando o contexto
-  const transactions = useContext(TransactionsContext)
+  const { transactions } = useContext(TransactionsContext)
   // const [transactions, setTransactions] = useState<Transaction[]>([])
   // useEffect(() => {
   //   api('transactions').then((response) => {
