@@ -33,7 +33,7 @@ interface TransactionsProviderProps {
 
 interface TransactionsContextData {
   transactions: Transaction[]
-  createTransaction: (transaction: TransactionInput) => void
+  createTransaction: (transaction: TransactionInput) => Promise<void>
 }
 
 // export const TransactionsContext = createContext<Transaction[]>([])
@@ -53,10 +53,16 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
   }, []) // vai buscar uma única vez
 
   // Pegamos a lógica que tava no NewTransactionModal e jogamos pra cá
-  function createTransaction(transaction: TransactionInput) {
+  async function createTransaction(transactionInput: TransactionInput) {
     // const data = { title, value, category, type }
 
-    api.post('/transactions', transaction)
+    const response = await api.post('/transactions', {
+      ...transactionInput,
+      createdAt: new Date()
+    })
+    const { transaction } = response.data
+
+    setTransactions([...transactions, transaction])
   }
 
   return (
